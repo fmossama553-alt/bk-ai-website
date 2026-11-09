@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BK AI | Artificial Intelligence Agency</title>
+<meta name="description" content="BK AI helps businesses grow with AI video ads, social media design, copywriting and AI assistants.">
+<meta name="theme-color" content="#07080c">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap">
+<style>
+:root{--bg:#07080c;--pn:#10121a;--ln:#222636;--tx:#f3f1ec;--mu:#9a9db0;--ac:#5b7cff;--ac2:#ff7a59;--ok:#4ade80;color-scheme:dark}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font:16px/1.65 'DM Sans',system-ui,sans-serif}
+h1,h2,h3{font-family:'Bricolage Grotesque','DM Sans',sans-serif;line-height:1.06;letter-spacing:-.02em}
+a{color:inherit}:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+.w{max-width:1120px;margin:0 auto;padding:0 22px}section{padding:92px 0}
+header{position:sticky;top:0;z-index:20;background:rgba(7,8,12,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--ln)}
+nav{display:flex;align-items:center;gap:24px;height:66px}
+.logo{font:800 23px 'Bricolage Grotesque';text-decoration:none;margin-right:auto}.logo b{color:var(--ac2)}
+nav a.l{color:var(--mu);text-decoration:none;font-size:15px}nav a.l:hover{color:var(--tx)}
+.btn{display:inline-block;border:1px solid var(--ln);background:var(--pn);color:var(--tx);padding:11px 20px;border-radius:11px;font:500 15px 'DM Sans';cursor:pointer;text-decoration:none}
+.btn:hover{border-color:var(--ac)}.btn.p{background:linear-gradient(135deg,var(--ac),#7a5bff);border-color:transparent;color:#fff}
+.btn.s{padding:6px 12px;font-size:13px;border-radius:8px}.btn.g{background:#1d9d57;border-color:transparent;color:#fff}
+.hero{padding:80px 0 60px;background:radial-gradient(700px 400px at 85% 10%,rgba(91,124,255,.22),transparent),radial-gradient(500px 300px at 0% 80%,rgba(255,122,89,.14),transparent)}
+.hg{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(40px,6.5vw,78px);font-weight:800}
+.hero p{color:var(--mu);font-size:19px;max-width:50ch;margin:22px 0 30px}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.col{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.col img{width:100%;height:100%;object-fit:cover;border-radius:18px;border:1px solid var(--ln)}
+.col .a{grid-row:span 2;height:380px}.col .b,.col .c{height:183px}
+.facts{display:flex;gap:34px;margin-top:40px;flex-wrap:wrap}.facts b{font:800 30px 'Bricolage Grotesque';display:block}.facts span{color:var(--mu);font-size:14px}
+h2{font-size:clamp(30px,4.6vw,48px);font-weight:700;margin-bottom:14px}.sub{color:var(--mu);max-width:56ch;margin-bottom:38px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:18px}
+.card{background:var(--pn);border:1px solid var(--ln);border-radius:18px;overflow:hidden}
+.card img{width:100%;height:190px;object-fit:cover;display:block}.card div{padding:22px}
+.card h3{font-size:21px;margin-bottom:8px}.card p{color:var(--mu);font-size:15px}
+.team{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:16px}
+.ag{background:var(--pn);border:1px solid var(--ln);border-radius:18px;padding:22px 16px;text-align:center}
+.ag svg{width:96px;height:96px;border-radius:50%;margin-bottom:12px}.ag b{display:block;font-family:'Bricolage Grotesque';font-size:18px}.ag span{color:var(--mu);font-size:13px}
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.steps div{border-top:2px solid var(--ac2);padding-top:14px}.steps div::before{counter-increment:s;content:counter(s);font:700 32px 'Bricolage Grotesque';color:var(--ac2)}
+.steps b{display:block;margin:4px 0}.steps span{color:var(--mu);font-size:15px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:44px}.two ul{list-style:none;padding:0}.two li{padding:13px 0;border-bottom:1px solid var(--ln)}
+@media(max-width:800px){.hg,.two{grid-template-columns:1fr}nav a.l{display:none}section{padding:64px 0}.col .a{height:260px}}
+label{display:block;font-size:14px;color:var(--mu);margin:12px 0 4px}
+input,select,textarea{width:100%;background:#0b0c12;border:1px solid var(--ln);color:var(--tx);padding:11px 13px;border-radius:10px;font:inherit}
+textarea{min-height:110px;resize:vertical}.msg{font-size:14px;margin-top:10px;min-height:20px}.err{color:var(--ac2)}.good{color:var(--ok)}
+.fm{padding:24px}footer{border-top:1px solid var(--ln);padding:30px 0;color:var(--mu);font-size:14px}
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.75);display:none;align-items:center;justify-content:center;z-index:50;padding:16px}.ov.on{display:flex}
+.modal{background:var(--pn);border:1px solid var(--ln);border-radius:18px;padding:26px;width:100%;max-width:400px;max-height:92vh;overflow:auto}
+.tabs{display:flex;gap:6px;margin-bottom:8px}.tabs button{flex:1;padding:9px;background:none;border:1px solid var(--ln);color:var(--mu);border-radius:10px;cursor:pointer;font:inherit}.tabs button.on{background:var(--ac);border-color:var(--ac);color:#fff}
+#app{position:fixed;inset:0;background:var(--bg);z-index:40;overflow:auto;display:none}#app.on{display:block}
+.bar{display:flex;align-items:center;gap:10px;padding:14px 22px;border-bottom:1px solid var(--ln);position:sticky;top:0;background:var(--bg);z-index:2;flex-wrap:wrap}.bar h3{margin-right:auto;font-size:20px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:22px 0}.stat{background:var(--pn);border:1px solid var(--ln);border-radius:14px;padding:16px}.stat b{font:800 32px 'Bricolage Grotesque'}.stat span{display:block;color:var(--mu);font-size:13px}
+.it{border:1px solid var(--ln);border-radius:12px;padding:14px;margin-top:10px;background:var(--pn);font-size:15px}.it small{color:var(--mu);display:block}
+.dr{background:#0b0c12;border:1px dashed var(--ln);border-radius:10px;padding:10px 12px;margin:8px 0;white-space:pre-wrap;font-size:14px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:22px;margin-bottom:30px}
+.tag{font-size:12px;padding:2px 9px;border-radius:99px;border:1px solid var(--ln);color:var(--mu)}.tag.w1{color:#ffd166;border-color:#ffd166}.tag.d{color:var(--ok);border-color:var(--ok)}
+#fab{position:fixed;right:18px;bottom:18px;z-index:30;background:linear-gradient(135deg,var(--ac),#7a5bff);color:#fff;border:0;border-radius:99px;padding:14px 22px;font:700 15px 'DM Sans';cursor:pointer;box-shadow:0 10px 34px rgba(91,124,255,.45)}
+#chat{position:fixed;right:18px;bottom:18px;z-index:60;width:min(380px,calc(100vw - 36px));height:min(560px,calc(100vh - 36px));background:var(--pn);border:1px solid var(--ln);border-radius:18px;display:none;flex-direction:column;overflow:hidden}#chat.on{display:flex}
+.ch{padding:14px 16px;border-bottom:1px solid var(--ln);display:flex;align-items:center}.ch b{margin-right:auto}
+#log{flex:1;overflow:auto;padding:14px;display:flex;flex-direction:column;gap:10px}
+.m{max-width:85%;padding:10px 13px;border-radius:13px;font-size:15px;white-space:pre-wrap}.m.b{background:#1b1e2b;align-self:flex-start}.m.u{background:var(--ac);align-self:flex-end}
+.q{display:flex;gap:6px;flex-wrap:wrap;padding:0 14px 8px}.q button{font-size:13px;background:none;border:1px solid var(--ln);color:var(--mu);border-radius:99px;padding:5px 11px;cursor:pointer}
+.cf{display:flex;gap:8px;padding:12px;border-top:1px solid var(--ln)}.cf input{flex:1}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="w"><nav>
+<a class="logo" href="#home">BK<b>.</b>AI</a>
+<a class="l" href="#about">About</a><a class="l" href="#services">Services</a><a class="l" href="#team">AI team</a><a class="l" href="#process">How we work</a><a class="l" href="#contact">Contact</a>
+<button class="btn s" id="loginBtn">Log in</button>
+</nav></div></header>
+<main>
+<section class="hero" id="home"><div class="w hg">
+<div><h1>Think beyond. Create without limits.</h1>
+<p>We turn ideas into AI video ads, social content and smart assistants. Our AI team does the heavy work, and a human approves every important step.</p>
+<div class="row"><button class="btn p" id="heroChat">Talk to our AI assistant</button><a class="btn" href="#services">See services</a></div>
+<div class="facts"><div><b>6</b><span>AI specialists</span></div><div><b>24/7</b><span>Always ready</span></div><div><b>100%</b><span>Human-approved</span></div></div></div>
+<div class="col">
+<img class="a" alt="Video production" src="https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=700&q=80">
+<img class="b" alt="Artificial intelligence" src="https://images.unsplash.com/photo-1676299081847-824916de030a?auto=format&fit=crop&w=600&q=80">
+<img class="c" alt="Graphic design" src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=600&q=80">
+</div></div></section>
+
+<section id="about"><div class="w two">
+<div><h2>Make your brand impossible to ignore.</h2><p class="sub">BK AI is a creative agency that pairs human ideas with modern AI tools, so your content looks professional and reaches more people online.</p></div>
+<ul><li>Creative work shaped around your goals</li><li>Clear communication and project updates</li><li>Human review before final delivery</li><li>Flexible solutions for growing businesses</li></ul>
+</div></section>
+
+<section id="services"><div class="w"><h2>Our services</h2><p class="sub">Practical digital services to help your business stand out and connect with customers.</p>
+<div class="grid">
+<div class="card"><img alt="" src="https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=800&q=80"><div><h3>AI video ads</h3><p>Promotional videos, product showcases and short-form content for social campaigns.</p></div></div>
+<div class="card"><img alt="" src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=800&q=80"><div><h3>Social media design</h3><p>Posts, stories, banners and visual identity that keep your brand consistent.</p></div></div>
+<div class="card"><img alt="" src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=80"><div><h3>Copywriting</h3><p>Captions, ad text and product descriptions that speak to people.</p></div></div>
+<div class="card"><img alt="" src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80"><div><h3>Page support</h3><p>Customer replies, FAQs and response templates for your social pages.</p></div></div>
+<div class="card"><img alt="" src="https://images.unsplash.com/photo-1676299081847-824916de030a?auto=format&fit=crop&w=800&q=80"><div><h3>AI assistant setup</h3><p>A custom AI assistant and simple workflows for everyday business tasks.</p></div></div>
+<div class="card"><img alt="" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"><div><h3>Growth ideas</h3><p>Content planning, campaign concepts and practical recommendations.</p></div></div>
+</div></div></section>
+
+<section id="team"><div class="w"><h2>Meet your AI team</h2><p class="sub">Six specialists prepare the work. Nothing reaches a client until a human approves it.</p><div class="team" id="teamGrid"></div></div></section>
+
+<section id="process"><div class="w"><h2>How we work</h2><p class="sub">A clear path from your first message to the approved delivery.</p>
+<div class="steps"><div><b>You share</b><span>Tell us about your business, goals and the service you need.</span></div><div><b>We plan</b><span>The AI team prepares a creative direction.</span></div><div><b>We create</b><span>A draft is built and reviewed by a human.</span></div><div><b>You approve</b><span>We apply your feedback and deliver the final result.</span></div></div></div></section>
+
+<section id="contact"><div class="w two">
+<div><h2>Start your next project</h2><p class="sub">Send a few details and we will get back to you.</p>
+<div class="row"><button class="btn g" id="waBtn">Chat on WhatsApp</button><button class="btn" id="mlBtn">Send an email</button></div></div>
+<form class="card fm" id="cform">
+<label for="cn">Your name</label><input id="cn" required>
+<label for="cc">Email or WhatsApp</label><input id="cc" required>
+<label for="cs">Service</label><select id="cs"></select>
+<label for="cm">What do you need?</label><textarea id="cm" required></textarea>
+<p class="msg" id="cmsg"></p><button class="btn p" type="submit">Send request</button>
+</form></div></section>
+</main>
+<footer><div class="w">© BK AI. All rights reserved.</div></footer>
+
+<div class="ov" id="lov"><div class="modal">
+<div class="tabs"><button id="tC" class="on">Client</button><button id="tA">Admin</button></div>
+<form id="lform">
+<div id="nameRow"><label for="ln">Full name</label><input id="ln" autocomplete="name"></div>
+<label for="lu" id="luL">Email</label><input id="lu" required autocomplete="username">
+<label for="lp">Password (min. 8 characters)</label><input id="lp" type="password" required minlength="8" autocomplete="current-password">
+<p class="msg" id="lmsg"></p>
+<div class="row"><button class="btn p" type="submit" id="lgo">Log in</button><button type="button" class="btn" id="lsw">Create account</button><button type="button" class="btn" id="lx">Close</button></div>
+</form></div></div>
+<div id="app"></div>
+<button id="fab">Ask BK AI</button>
+<div id="chat" role="dialog" aria-label="BK AI assistant"><div class="ch"><b>BK AI assistant</b><button class="btn s" id="cx">Close</button></div>
+<div id="log" aria-live="polite"></div><div class="q" id="qk"></div>
+<form class="cf" id="chf"><input id="ci" placeholder="Type your question…" autocomplete="off" required><button class="btn p" type="submit">Send</button></form></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script>
+const CFG={SUPABASE_URL:'',SUPABASE_KEY:'',WORKER_URL:''}; // fill these 3 values
+const $=s=>document.querySelector(s);
+const esc=t=>String(t==null?'':t).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const when=d=>new Date(d).toLocaleString();
+const sb=(CFG.SUPABASE_URL&&CFG.SUPABASE_KEY&&window.supabase)?supabase.createClient(CFG.SUPABASE_URL,CFG.SUPABASE_KEY):null;
+let ME=null;
+const _w='MjE2NTQ5NDYyNDI=',_m='Zm1vc3NhbWE1NTNAZ21haWwuY29t';
+const wa=t=>'https://wa.me/'+atob(_w)+(t?'?text='+encodeURIComponent(t):''),ml=(s,b)=>'mailto:'+atob(_m)+'?subject='+encodeURIComponent(s)+'&body='+encodeURIComponent(b);
+const go=u=>window.open(u,'_blank','noopener');
+$('#waBtn').onclick=()=>go(wa('Hello BK AI, I would like to discuss a project.'));
+$('#mlBtn').onclick=()=>{location.href=ml('Project enquiry','Hello BK AI,\n')};
+const SV=['AI Video Ads','Social Media Design','Copywriting','Page Support','AI Assistant Setup','Growth Ideas','Other'];
+$('#cs').innerHTML=SV.map(s=>`<option>${s}</option>`).join('');
+const AG=[{k:'Manager',r:'Coordinator',c:['#5b7cff','#7a5bff'],sk:'#f1c6a0'},{k:'Creator',r:'Video & ideas',c:['#ff7a59','#ff4d8d'],sk:'#e0a47c'},{k:'Designer',r:'Visuals',c:['#22c1c3','#2d6bff'],sk:'#c68a62'},{k:'Copywriter',r:'Writing',c:['#a855f7','#ec4899'],sk:'#f5d0b0'},{k:'Support',r:'Customer care',c:['#10b981','#14b8a6'],sk:'#d9a07a'},{k:'Analyst',r:'Insights',c:['#f59e0b','#ef4444'],sk:'#b97b57'}];
+const av=a=>`<svg viewBox="0 0 100 100" role="img" aria-label="AI ${a.k}"><defs><linearGradient id="g${a.k}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${a.c[0]}"/><stop offset="1" stop-color="${a.c[1]}"/></linearGradient></defs><rect width="100" height="100" fill="url(#g${a.k})"/><path d="M12 100c2-24 18-32 38-32s36 8 38 32z" fill="#0d1020" opacity=".85"/><rect x="43" y="56" width="14" height="14" rx="6" fill="${a.sk}"/><ellipse cx="50" cy="42" rx="17" ry="20" fill="${a.sk}"/><path d="M32 40c0-16 10-23 19-23s18 7 18 23c-4-8-9-12-18-12s-15 4-19 12z" fill="#1b1410"/><circle cx="43" cy="44" r="2.2" fill="#1b1410"/><circle cx="57" cy="44" r="2.2" fill="#1b1410"/><path d="M44 52q6 5 12 0" stroke="#7a3b2b" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="50" cy="80" r="3" fill="${a.c[0]}"/></svg>`;
+$('#teamGrid').innerHTML=AG.map(a=>`<div class="ag">${av(a)}<b>AI ${a.k}</b><span>${a.r}</span></div>`).join('');
+
+/* data layer (Supabase) */
+async function addLead(o){if(!sb)return false;const{error}=await sb.from('leads').insert({owner:ME?ME.id:null,...o});return !error}
+async function generate(agent,brief,fb){
+ try{const{data}=await sb.auth.getSession();const r=await fetch(CFG.WORKER_URL+'/agent',{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+data.session.access_token},body:JSON.stringify({agent,brief,feedback:fb||''})});const j=await r.json();if(j.reply)return j.reply}catch{}
+ return 'The AI server did not answer. Check the Worker settings, then ask for changes to try again.\n\nRequest: '+brief}
+async function draft(id,agent,brief,fb){const d=await generate(agent,brief,fb);await sb.from('tasks').update({draft:d,status:'waiting'}).eq('id',id);if(ME&&ME.role==='admin'&&$('#app').classList.contains('on'))adminView()}
+async function addTask(agent,title,brief,lead){const{data}=await sb.from('tasks').insert({agent,title,brief,lead_id:lead?lead.id:null,lead_contact:lead?lead.contact:null}).select().single();if(data)draft(data.id,agent,brief)}
+$('#cform').addEventListener('submit',async e=>{e.preventDefault();const m=$('#cmsg');
+ const ok=await addLead({name:$('#cn').value,contact:$('#cc').value,service:$('#cs').value,text:$('#cm').value,src:'form'});
+ m.className='msg '+(ok?'good':'err');m.textContent=ok?'Thank you. Your request was received and our team will contact you soon.':'Could not send now. Please use the WhatsApp or email button.';if(ok)e.target.reset()});
+
+/* auth */
+async function refreshMe(){ME=null;if(!sb)return;const{data}=await sb.auth.getSession(),s=data.session;if(!s)return;
+ const{data:p}=await sb.from('profiles').select('name,role').eq('id',s.user.id).maybeSingle();
+ ME={id:s.user.id,email:s.user.email,name:(p&&p.name)||s.user.email,role:(p&&p.role)||'client'}}
+let mode='client',reg=false;
+function paintLogin(){$('#tC').classList.toggle('on',mode==='client');$('#tA').classList.toggle('on',mode==='admin');
+ $('#nameRow').style.display=mode==='client'&&reg?'block':'none';$('#luL').textContent='Email';
+ $('#lsw').style.display=mode==='client'?'inline-block':'none';$('#lsw').textContent=reg?'I have an account':'Create account';
+ $('#lgo').textContent=mode==='admin'?'Log in as admin':(reg?'Create account':'Log in');
+ $('#lmsg').textContent=sb?'':'Server not configured yet.';$('#lmsg').className='msg err'}
+$('#loginBtn').onclick=()=>{if(ME)openApp();else{$('#lov').classList.add('on');paintLogin()}};
+$('#lx').onclick=()=>$('#lov').classList.remove('on');
+$('#tC').onclick=()=>{mode='client';paintLogin()};$('#tA').onclick=()=>{mode='admin';paintLogin()};$('#lsw').onclick=()=>{reg=!reg;paintLogin()};
+$('#lform').addEventListener('submit',async e=>{e.preventDefault();const m=$('#lmsg');m.className='msg err';if(!sb){m.textContent='Server not configured yet.';return}
+ const email=$('#lu').value.trim(),password=$('#lp').value;m.textContent='…';
+ if(mode==='client'&&reg){const{data,error}=await sb.auth.signUp({email,password,options:{data:{name:$('#ln').value||email}}});
+  if(error){m.textContent=error.message;return}if(!data.session){m.className='msg good';m.textContent='Account created. Check your email to confirm, then log in.';return}}
+ else{const{error}=await sb.auth.signInWithPassword({email,password});if(error){m.textContent='Wrong email or password.';return}}
+ await refreshMe();
+ if(mode==='admin'&&(!ME||ME.role!=='admin')){await sb.auth.signOut();ME=null;m.textContent='This account is not an admin.';return}
+ e.target.reset();$('#lov').classList.remove('on');openApp()});
+
+/* dashboards */
+async function logout(){if(sb)await sb.auth.signOut();ME=null;$('#app').classList.remove('on');$('#loginBtn').textContent='Log in'}
+function openApp(){if(!ME)return;$('#loginBtn').textContent='Dashboard';$('#app').classList.add('on');ME.role==='admin'?adminView():clientView()}
+const bar=t=>`<div class="bar"><h3>${t}</h3><button class="btn s" id="aChat">AI assistant</button><button class="btn s" id="aClose">Site</button><button class="btn s" id="aOut">Log out</button></div>`;
+function wire(){$('#aChat').onclick=openChat;$('#aClose').onclick=()=>$('#app').classList.remove('on');$('#aOut').onclick=logout}
+const stTag=s=>s==='waiting'?'<span class="tag w1">waiting for your OK</span>':s==='working'?'<span class="tag">AI working…</span>':'<span class="tag d">approved</span>';
+async function adminView(){
+ $('#app').innerHTML=bar('CEO dashboard · '+esc(ME.name))+'<div class="w"><p class="sub" style="margin-top:20px">Loading…</p></div>';wire();
+ const[l,t,c]=await Promise.all([sb.from('leads').select('*').order('created_at',{ascending:false}),sb.from('tasks').select('*').order('created_at',{ascending:false}),sb.from('profiles').select('*').eq('role','client')]);
+ const L=l.data||[],T=t.data||[],C=c.data||[];
+ const fresh=L.filter(x=>!x.handled);
+ if(fresh.length){for(const x of fresh){await sb.from('leads').update({handled:true}).eq('id',x.id);addTask('Support','Reply to '+(x.name||'new lead'),x.text||'New request',x)}setTimeout(adminView,600)}
+ $('#app').innerHTML=bar('CEO dashboard · '+esc(ME.name))+`<div class="w">
+ <div class="stats"><div class="stat"><b>${T.filter(x=>x.status==='waiting').length}</b><span>Waiting for your OK</span></div><div class="stat"><b>${T.filter(x=>x.status==='approved').length}</b><span>Approved</span></div><div class="stat"><b>${L.length}</b><span>Requests</span></div><div class="stat"><b>${C.length}</b><span>Clients</span></div></div>
+ <div class="cols"><div><h3>AI team tasks</h3>
+ <form class="it" id="tf"><label for="ta">Give a task to</label><select id="ta">${AG.map(a=>`<option value="${a.k}">AI ${a.k}</option>`).join('')}</select><label for="tb">What should it do?</label><textarea id="tb" required placeholder="Example: video script for a coffee shop in Tunis"></textarea><button class="btn p s" style="margin-top:10px">Send to AI</button></form>
+ ${T.map(x=>{const ph=/^\+?[\d\s-]{8,}$/.test(x.lead_contact||''),em=/@/.test(x.lead_contact||'');return `<div class="it"><b>AI ${esc(x.agent)}</b> · ${esc(x.title)} ${stTag(x.status)}<small>${when(x.created_at)}</small>${x.draft?`<div class="dr">${esc(x.draft)}</div>`:''}
+ <div class="row">${x.status==='waiting'?`<button class="btn p s" data-ok="${x.id}">OK, approve</button><button class="btn s" data-rj="${x.id}">Ask for changes</button>`:''}${x.status==='approved'&&ph?`<button class="btn g s" data-sw="${x.id}">Send via WhatsApp</button>`:''}${x.status==='approved'&&em?`<button class="btn s" data-se="${x.id}">Send via email</button>`:''}<button class="btn s" data-dx="${x.id}">Delete</button></div></div>`}).join('')||'<p class="sub" style="margin-top:12px">No tasks yet. New client requests create a draft reply automatically.</p>'}</div>
+ <div><h3>Requests</h3>${L.map(x=>`<div class="it"><b>${esc(x.name||'Lead')}</b><small>${esc(x.contact||'')} · ${esc(x.service||x.src)} · ${when(x.created_at)}</small>${esc(x.text||'')}<div class="row" style="margin-top:8px"><button class="btn s" data-lx="${x.id}">Delete</button></div></div>`).join('')||'<p class="sub" style="margin-top:12px">No requests yet.</p>'}
+ <h3 style="margin-top:26px">Clients</h3>${C.map(x=>`<div class="it">${esc(x.name)}<small>${esc(x.email)} · ${when(x.created_at)}</small></div>`).join('')||'<p class="sub" style="margin-top:12px">No clients yet.</p>'}</div></div></div>`;
+ wire();const f=id=>T.find(x=>x.id===id),q=(a,fn)=>document.querySelectorAll(a).forEach(fn);
+ $('#tf').onsubmit=e=>{e.preventDefault();const b=$('#tb').value;addTask($('#ta').value,b.slice(0,40),b);setTimeout(adminView,700)};
+ q('[data-ok]',b=>b.onclick=async()=>{await sb.from('tasks').update({status:'approved'}).eq('id',b.dataset.ok);adminView()});
+ q('[data-dx]',b=>b.onclick=async()=>{await sb.from('tasks').delete().eq('id',b.dataset.dx);adminView()});
+ q('[data-lx]',b=>b.onclick=async()=>{await sb.from('leads').delete().eq('id',b.dataset.lx);adminView()});
+ q('[data-rj]',b=>b.onclick=async()=>{const fb=prompt('What should change?');if(!fb)return;const x=f(b.dataset.rj);await sb.from('tasks').update({status:'working'}).eq('id',x.id);draft(x.id,x.agent,x.brief,fb);setTimeout(adminView,400)});
+ q('[data-sw]',b=>b.onclick=()=>{const x=f(b.dataset.sw);go('https://wa.me/'+x.lead_contact.replace(/\D/g,'')+'?text='+encodeURIComponent(x.draft))});
+ q('[data-se]',b=>b.onclick=()=>{const x=f(b.dataset.se);location.href='mailto:'+x.lead_contact+'?subject='+encodeURIComponent('BK AI')+'&body='+encodeURIComponent(x.draft)})}
+async function clientView(){
+ const{data}=await sb.from('leads').select('*').eq('owner',ME.id).order('created_at',{ascending:false}),mine=data||[];
+ $('#app').innerHTML=bar('Welcome, '+esc(ME.name))+`<div class="w" style="padding-top:24px;max-width:720px"><h3>New request</h3><form class="card fm" id="rf" style="margin:10px 0 28px"><label for="rs">Service</label><select id="rs">${SV.map(x=>`<option>${x}</option>`).join('')}</select><label for="rt">Describe what you need</label><textarea id="rt" required></textarea><button class="btn p" style="margin-top:12px">Send request</button></form>
+ <h3>My requests</h3>${mine.map(x=>`<div class="it"><b>${esc(x.service)}</b> <span class="tag">received</span><small>${when(x.created_at)}</small>${esc(x.text)}</div>`).join('')||'<p class="sub" style="margin-top:12px">No requests yet. Send your first one above.</p>'}</div>`;
+ wire();$('#rf').onsubmit=async e=>{e.preventDefault();await addLead({name:ME.name,contact:ME.email,service:$('#rs').value,text:$('#rt').value,src:'client'});clientView()}}
+
+/* website assistant (Claude via Worker) */
+const hist=[],FALL='I can help with video ads, social design, copywriting, page support, AI assistants and growth ideas. Leave your name and email or WhatsApp with a short description and the team will contact you.';
+function say(t,c){const d=document.createElement('div');d.className='m '+c;d.textContent=t;$('#log').appendChild(d);$('#log').scrollTop=1e9;return d}
+function openChat(){$('#chat').classList.add('on');$('#fab').style.display='none';
+ if(!$('#log').children.length){say('Hi, I’m the BK AI assistant. How can I help your business today?','b');['Services','Pricing','How it works','Contact'].forEach(q=>{const b=document.createElement('button');b.textContent=q;b.onclick=()=>send(q);$('#qk').appendChild(b)})}$('#ci').focus()}
+$('#fab').onclick=openChat;$('#heroChat').onclick=openChat;$('#cx').onclick=()=>{$('#chat').classList.remove('on');$('#fab').style.display='block'};
+async function answer(){try{const r=await fetch(CFG.WORKER_URL+'/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:hist.slice(-10)})});const j=await r.json();if(j.reply)return j.reply}catch{}return FALL}
+async function send(t){say(t,'u');hist.push({role:'user',content:t});$('#qk').innerHTML='';
+ const mail=t.match(/[^\s@]+@[^\s@]+\.[^\s@]+/),tel=t.match(/\+?\d[\d\s-]{7,}/);
+ if(mail||tel)addLead({name:ME?ME.name:'Chat visitor',contact:(mail||tel)[0],text:t,src:'chat'});
+ const w=say('…','b'),a=await answer();w.textContent=a;hist.push({role:'assistant',content:a})}
+$('#chf').addEventListener('submit',e=>{e.preventDefault();const t=$('#ci').value.trim();if(t){$('#ci').value='';send(t)}});
+(async()=>{await refreshMe();if(ME)$('#loginBtn').textContent='Dashboard'})();
+</script>
+</body>
+</html>
